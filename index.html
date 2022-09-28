@@ -12,17 +12,26 @@
         <nav class="navbar">
             <h3 class="logo">Fiber</h3>
             <ul class="navList desktop">
-                <li class="navItem">Community</li>
-                <li class="navItem">Pricing</li>
-                <li class="navItem">Features</li>
+                <li class="navItem"><a href="#why">Why Fiber?</a></li>
+                <li class="navItem"><a href="#feature">Feature</a></li>
+                <li class="navItem"><a href="#testimonial">Testimonial</a></li>
             </ul>
             <div class="buttonGroup desktop">
                 <a class="signIn" href="">Sign In</a>
                 <a class="signUp" href="">Sign Up</a>
             </div>
-            <svg class="menu mobile" width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 4H0V0H24V4ZM24 8H0V12H24V8ZM24 16H0V20H24V16Z" fill="black"/>
-            </svg>                
+            <svg id="menu" class="menu" width="2rem" height="2rem" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="svg-menu-toggle">
+                    <path class="line line-1" d="M5 13h90v14H5z" fill="black"/>
+                    <path class="line line-2" d="M5 43h90v14H5z" fill="black"/>
+                    <path class="line line-3" d="M5 73h90v14H5z" fill="black"/>
+                </g>
+            </svg>
+            <ul id="mobileNavList" class="mobileNavList">
+                <li class="navItem"><a href="#why">Why Fiber?</a></li>
+                <li class="navItem"><a href="#feature">Feature</a></li>
+                <li class="navItem"><a href="#testimonial">Testimonial</a></li>
+            </ul>                
         </nav>
         <section class="banner">
             <aside class="detailWrap">
@@ -57,7 +66,7 @@
         </section>
     </header>
     <main>
-        <section class="content container">
+        <section class="content container" id="why">
             <p class="question">Why Fiber?</p>
             <h3 class="questionHeading">A good portfolio means good employability.</h3>
             <ul class="answerList">
@@ -77,7 +86,7 @@
                     <p class="answerDescription">All Fiber templates are fully responsive to ensure the experience is seemless across all devices.</p>
                 </li>
             </ul>
-            <section class="contentDetailWrap">
+            <section class="contentDetailWrap" id="feature">
                 <aside class="contentDetail">
                     <h2 class="contentHeading">Diversify your portfolio.</h2>
                     <p class="contentDescription">Create an even more impressive portfolio by creating case studies for your projects. Simply follow our step-by-step guide.</p>
@@ -86,7 +95,7 @@
                 <img class="contentImg" src="./assets/Page Image.png" alt="Page">
             </section>
         </section>
-        <section class="container testimonial">
+        <section class="container testimonial" id="testimonial">
             <ul class="testList">
                 <li class="testListItem">
                     <div class="profileWrap">
@@ -158,5 +167,26 @@
             </ul>
         </section>
     </footer>
+    <script>
+        let button = document.getElementById('menu');
+        let list = document.getElementById('mobileNavList');
+        let barWrap = document.getElementsByClassName('svg-menu-toggle');
+        window.addEventListener('click', function(e) {
+            if(e.target === button || e.target === list || e.target === barWrap || e.target.classList.contains('line')) return;
+            button.classList.remove('opened');
+            list.classList.remove('opened');
+        }, false);
+        button.addEventListener('click', function() {
+            if (button.classList.contains('opened')) {
+                button.classList.remove('opened');
+                list.classList.remove('opened');
+                button.setAttribute( 'aria-expanded', 'false' );
+            } else {
+                button.classList.add('opened');
+                list.classList.add('opened');
+                button.setAttribute( 'aria-expanded', 'true' );
+            }
+        }, true);
+    </script>
 </body>
 </html>
