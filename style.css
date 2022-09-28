@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-/* 
-    colors
-    #4d13d1 - button
-    #fafbf3 - bg
-    #2e2e2e - testimonial sub text
-    #4f4f4f - banner sub text
-*/
 * {
     font-family: 'Inter', 'Open Sans', sans-serif;
     margin: 0;
@@ -21,7 +14,8 @@ main {
     padding: 6rem 0;
 }
 .container {
-    margin: 0 10rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 .navbar {
     padding-top: 2rem;
@@ -278,4 +272,146 @@ main {
 .linksCommon .links {
     font-size: 1.05rem;
     margin-bottom: 0.625rem;
+}
+.mobile {
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    .container {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
+@media screen and (max-width: 992px) {
+    .navbar .logo {
+        font-size: 1.5rem;
+    }
+    .banner {
+        margin: 4rem 0;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .answerList {
+        grid-gap: 2rem;
+    }
+    .contentDetail {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .contentDetailWrap {
+        padding: 2rem 2rem 0 2rem;
+        flex-direction: column;
+    }
+    .contentDetailWrap .contentImg {
+        max-width: 100%;
+    }
+    .footerMainWrap {
+        justify-content: flex-start;        
+        gap: 3rem;
+    }
+    .footerDetailWrap {
+        flex: 0 0 60%;
+    }
+    .illustrationBanner {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .banner {
+        margin: 2rem 0;
+    }
+    .bannerHeading {
+        font-size: 2.5rem;
+    }
+    .buttonGroupTwo {
+        text-align: center;
+    }
+    .buttonGroupTwo .viewExamples {
+        margin-left: 0;
+        width: max-content;
+        width: 100%;
+    }
+    .buttonGroupTwo .freeTrial {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    .featureList {
+        flex-direction: column;
+    }
+    .featureListItem:last-child {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
+    main {
+        padding: 4rem 0;
+    }
+    .answerList {
+        grid-template-columns: 1fr;
+        grid-gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+    .contentDetail .freeTrial {
+        width: 100%;
+        text-align: center;
+    }
+    .testList {
+        display: block;
+        overflow-x: hidden;
+    }
+    .testList .testListItem:not(:first-child) {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .testList .testListItem {
+        padding: 1rem;
+    }
+    .footerDetailWrap {
+        flex: 0 0 100%;
+    }
+}
+@media screen and (max-width: 360px) {
+    main {
+        padding: 3rem 0;
+    }
+    .bannerHeading {
+        font-size: 2.25rem;
+    }
+    .contentDetail .contentHeading {
+        font-size: 1.75rem;
+    }
+    .contentDetail .contentDescription {
+        font-size: 1rem;
+    }
+    .testListItem .description,
+    .footerDetailWrap .footerDetailDescription, .footerDetailMade {
+        font-size: 0.875rem;
+    }
+    .footerDetailWrap .footerDetailHeading {
+        margin-bottom: 0.5rem;
+    }
+    .linksCommon {
+        width: 100%;
+    }
+    .linksCommon .linksHeading {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    .linksCommon .links {
+        font-size: 0.9375rem;
+    }
+    .footerMainWrap {
+        gap: 2rem;
+    }
 }
